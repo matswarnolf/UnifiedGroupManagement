@@ -151,7 +151,7 @@ function Restore-UnifiedGroup {
             $(foreach ($item in $RestorableGroups) {
                     $item | Select-Object @{l = 'IDX'; e = {$IDX}}, DisplayName
                     $IDX++
-                }) |  Out-GridView -Title 'Select one or more folders to use' -OutputMode Multiple |
+                }) |  Out-GridView -Title 'Select one or more groups to restore' -OutputMode Multiple |
                 ForEach-Object { $RestorableGroups[$_.IDX] }
             $Result
             Restore-AzureADMSDeletedDirectoryObject -Id $Result.Id
